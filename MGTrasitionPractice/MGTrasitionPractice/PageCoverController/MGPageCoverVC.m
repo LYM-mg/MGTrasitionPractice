@@ -22,8 +22,11 @@
     self.title = @"翻页效果";
     self.view.backgroundColor = [UIColor grayColor];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"04.jpeg"]];
+    imageView.y = 64;
+    imageView.height = self.view.height - 64;
     [self.view addSubview:imageView];
     imageView.frame = self.view.frame;
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"点我或向左滑动push" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

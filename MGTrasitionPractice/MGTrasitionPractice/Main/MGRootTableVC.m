@@ -11,6 +11,9 @@
 #import "MGPresentOneVC.h"
 #import "MGPageCoverVC.h"
 #import "MGCircleSpreadVC.h"
+#import "MGAnimationVC.h"
+
+#import "GradientView.h"
 
 @interface MGRootTableVC ()
 @property (nonatomic, strong) NSArray *data;
@@ -18,6 +21,10 @@
 @end
 
 @implementation MGRootTableVC
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,14 +39,14 @@
 
 - (NSArray *)data{
     if (!_data) {
-        _data = [@[@"神奇移动",@"弹性pop",@"翻页效果",@"小圆点扩散"] copy];
+        _data = [@[@"神奇移动",@"弹性pop",@"翻页效果",@"小圆点扩散",@"CustomAnimation"] copy];
     }
     return _data;
 }
 
 - (NSArray *)viewControllers{
     if (!_viewControllers) {
-        _viewControllers = [@[@"MGMagicMoveVC", @"MGPresentOneVC", @"MGPageCoverVC", @"MGCircleSpreadVC"] copy];
+        _viewControllers = [@[@"MGMagicMoveVC", @"MGPresentOneVC", @"MGPageCoverVC", @"MGCircleSpreadVC",@"MGAnimationVC"] copy];
     }
     return _viewControllers;
 }
@@ -50,12 +57,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    __block GradientView *gradientView = nil;
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        // 1.新建一个view,随便设置位置尺寸,将gradientLayer添加到view上面
+        gradientView = [[GradientView alloc] initWithFrame:cell.frame];
+        gradientView.width = self.view.width;
+        gradientView.backgroundColor = [UIColor clearColor];
+        
+        [cell addSubview:gradientView];
+
     }
-    cell.textLabel.text = _data[indexPath.row];
+    gradientView.textStr = _data[indexPath.row];
+   //    cell.textLabel.text = _data[indexPath.row];
     return cell;
 }
+
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.navigationController pushViewController:[[NSClassFromString(self.viewControllers[indexPath.row]) alloc] init] animated:YES];

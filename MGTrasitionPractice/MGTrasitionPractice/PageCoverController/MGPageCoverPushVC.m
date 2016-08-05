@@ -24,6 +24,9 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"07.jpg"]];
     [self.view addSubview:imageView];
     imageView.frame = self.view.frame;
+    imageView.y = 64;
+    imageView.height = self.view.height - 64;
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"点我或向右滑动pop" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

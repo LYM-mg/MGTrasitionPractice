@@ -36,6 +36,16 @@
 		3A6CA4861D5369640060145E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6CA4771D5369640060145E /* NSLayoutConstraint+MASDebugAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		3A6CA4871D5369640060145E /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6CA4791D5369640060145E /* View+MASAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		3A6CA4881D5369640060145E /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6CA47C1D5369640060145E /* ViewController+MASAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		3A80DA551D5417F10090C4F2 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A80DA541D5417F10090C4F2 /* GradientView.m */; settings = {ASSET_TAGS = (); }; };
+		3A80DA741D54895D0090C4F2 /* HUTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A80DA661D54895D0090C4F2 /* HUTransitionAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		3A80DA751D54895D0090C4F2 /* HUTransitionGhostAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A80DA681D54895D0090C4F2 /* HUTransitionGhostAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		3A80DA761D54895D0090C4F2 /* HUTransitionHorizontalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A80DA6A1D54895D0090C4F2 /* HUTransitionHorizontalLinesAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		3A80DA771D54895D0090C4F2 /* HUTransitionVerticalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A80DA6C1D54895D0090C4F2 /* HUTransitionVerticalLinesAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		3A80DA781D54895D0090C4F2 /* UIViewController+Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A80DA6F1D54895D0090C4F2 /* UIViewController+Animator.m */; settings = {ASSET_TAGS = (); }; };
+		3A80DA791D54895D0090C4F2 /* ZBFallenBricksAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A80DA711D54895D0090C4F2 /* ZBFallenBricksAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		3A80DA801D5489B70090C4F2 /* CustomTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A80DA7C1D5489B70090C4F2 /* CustomTransitionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3A80DA811D5489B70090C4F2 /* CustomTransitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A80DA7D1D5489B70090C4F2 /* CustomTransitionViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		3A80DA821D5489B70090C4F2 /* MGAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A80DA7F1D5489B70090C4F2 /* MGAnimationVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AB38A841D52E5B8003A7871 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB38A831D52E5B8003A7871 /* main.m */; };
 		3AB38A8D1D52E5B9003A7871 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB38A8B1D52E5B9003A7871 /* Main.storyboard */; };
 		3AB38A901D52E5B9003A7871 /* MGTrasitionPractice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AB38A8E1D52E5B9003A7871 /* MGTrasitionPractice.xcdatamodeld */; };
@@ -107,6 +117,25 @@
 		3A6CA47A1D5369640060145E /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		3A6CA47B1D5369640060145E /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		3A6CA47C1D5369640060145E /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		3A80DA531D5417F10090C4F2 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		3A80DA541D5417F10090C4F2 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		3A80DA651D54895D0090C4F2 /* HUTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUTransitionAnimator.h; sourceTree = "<group>"; };
+		3A80DA661D54895D0090C4F2 /* HUTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUTransitionAnimator.m; sourceTree = "<group>"; };
+		3A80DA671D54895D0090C4F2 /* HUTransitionGhostAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUTransitionGhostAnimator.h; sourceTree = "<group>"; };
+		3A80DA681D54895D0090C4F2 /* HUTransitionGhostAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUTransitionGhostAnimator.m; sourceTree = "<group>"; };
+		3A80DA691D54895D0090C4F2 /* HUTransitionHorizontalLinesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUTransitionHorizontalLinesAnimator.h; sourceTree = "<group>"; };
+		3A80DA6A1D54895D0090C4F2 /* HUTransitionHorizontalLinesAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUTransitionHorizontalLinesAnimator.m; sourceTree = "<group>"; };
+		3A80DA6B1D54895D0090C4F2 /* HUTransitionVerticalLinesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUTransitionVerticalLinesAnimator.h; sourceTree = "<group>"; };
+		3A80DA6C1D54895D0090C4F2 /* HUTransitionVerticalLinesAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUTransitionVerticalLinesAnimator.m; sourceTree = "<group>"; };
+		3A80DA6E1D54895D0090C4F2 /* UIViewController+Animator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Animator.h"; sourceTree = "<group>"; };
+		3A80DA6F1D54895D0090C4F2 /* UIViewController+Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Animator.m"; sourceTree = "<group>"; };
+		3A80DA701D54895D0090C4F2 /* ZBFallenBricksAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBFallenBricksAnimator.h; sourceTree = "<group>"; };
+		3A80DA711D54895D0090C4F2 /* ZBFallenBricksAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBFallenBricksAnimator.m; sourceTree = "<group>"; };
+		3A80DA7B1D5489B70090C4F2 /* CustomTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTransitionViewController.h; sourceTree = "<group>"; };
+		3A80DA7C1D5489B70090C4F2 /* CustomTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTransitionViewController.m; sourceTree = "<group>"; };
+		3A80DA7D1D5489B70090C4F2 /* CustomTransitionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTransitionViewController.xib; sourceTree = "<group>"; };
+		3A80DA7E1D5489B70090C4F2 /* MGAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAnimationVC.h; sourceTree = "<group>"; };
+		3A80DA7F1D5489B70090C4F2 /* MGAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAnimationVC.m; sourceTree = "<group>"; };
 		3AB38A7F1D52E5B8003A7871 /* MGTrasitionPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGTrasitionPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB38A831D52E5B8003A7871 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3AB38A8C1D52E5B9003A7871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,6 +230,7 @@
 		3A6CA4531D5369330060145E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3A80DA521D5417F10090C4F2 /* V */,
 				3A6CA4541D5369330060145E /* AppDelegate.h */,
 				3A6CA4551D5369330060145E /* AppDelegate.m */,
 				3A6CA4561D5369330060145E /* MGInteractiveTransition.h */,
@@ -263,6 +293,71 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		3A80DA521D5417F10090C4F2 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				3A80DA531D5417F10090C4F2 /* GradientView.h */,
+				3A80DA541D5417F10090C4F2 /* GradientView.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		3A80DA561D5489060090C4F2 /* MGAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				3A80DA7A1D5489B70090C4F2 /* C */,
+				3A80DA5F1D54895D0090C4F2 /* V */,
+			);
+			path = MGAnimation;
+			sourceTree = "<group>";
+		};
+		3A80DA5F1D54895D0090C4F2 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				3A80DA641D54895D0090C4F2 /* HUAnimator */,
+				3A80DA6D1D54895D0090C4F2 /* ZBCustomTransitions */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		3A80DA641D54895D0090C4F2 /* HUAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				3A80DA651D54895D0090C4F2 /* HUTransitionAnimator.h */,
+				3A80DA661D54895D0090C4F2 /* HUTransitionAnimator.m */,
+				3A80DA671D54895D0090C4F2 /* HUTransitionGhostAnimator.h */,
+				3A80DA681D54895D0090C4F2 /* HUTransitionGhostAnimator.m */,
+				3A80DA691D54895D0090C4F2 /* HUTransitionHorizontalLinesAnimator.h */,
+				3A80DA6A1D54895D0090C4F2 /* HUTransitionHorizontalLinesAnimator.m */,
+				3A80DA6B1D54895D0090C4F2 /* HUTransitionVerticalLinesAnimator.h */,
+				3A80DA6C1D54895D0090C4F2 /* HUTransitionVerticalLinesAnimator.m */,
+			);
+			path = HUAnimator;
+			sourceTree = "<group>";
+		};
+		3A80DA6D1D54895D0090C4F2 /* ZBCustomTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				3A80DA6E1D54895D0090C4F2 /* UIViewController+Animator.h */,
+				3A80DA6F1D54895D0090C4F2 /* UIViewController+Animator.m */,
+				3A80DA701D54895D0090C4F2 /* ZBFallenBricksAnimator.h */,
+				3A80DA711D54895D0090C4F2 /* ZBFallenBricksAnimator.m */,
+			);
+			path = ZBCustomTransitions;
+			sourceTree = "<group>";
+		};
+		3A80DA7A1D5489B70090C4F2 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				3A80DA7B1D5489B70090C4F2 /* CustomTransitionViewController.h */,
+				3A80DA7C1D5489B70090C4F2 /* CustomTransitionViewController.m */,
+				3A80DA7D1D5489B70090C4F2 /* CustomTransitionViewController.xib */,
+				3A80DA7E1D5489B70090C4F2 /* MGAnimationVC.h */,
+				3A80DA7F1D5489B70090C4F2 /* MGAnimationVC.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
 		3AB38A761D52E5B8003A7871 = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +382,7 @@
 				3AB38AA11D52E799003A7871 /* PresentOneController */,
 				3AB38AA01D52E799003A7871 /* PageCoverController */,
 				3A20A7901D52A96B005FB972 /* CircleSpreadController */,
+				3A80DA561D5489060090C4F2 /* MGAnimation */,
 				3A6CA45D1D5369640060145E /* Other */,
 				3AB38A8B1D52E5B9003A7871 /* Main.storyboard */,
 				3AB38A911D52E5B9003A7871 /* Assets.xcassets */,
@@ -402,6 +498,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A80DA811D5489B70090C4F2 /* CustomTransitionViewController.xib in Resources */,
 				3A20A7B21D53346E005FB972 /* MGMagicMoveCell.xib in Resources */,
 				3AB38A951D52E5B9003A7871 /* LaunchScreen.storyboard in Resources */,
 				3AB38A921D52E5B9003A7871 /* Assets.xcassets in Resources */,
@@ -420,10 +517,13 @@
 				3A20A7A21D532CE8005FB972 /* MGCircleSpreadPresentedVC.m in Sources */,
 				3A20A7891D52A8B5005FB972 /* MGPresentedOneController.m in Sources */,
 				3A6CA4861D5369640060145E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				3A80DA751D54895D0090C4F2 /* HUTransitionGhostAnimator.m in Sources */,
 				3A6CA45C1D5369330060145E /* MGRootTableVC.m in Sources */,
 				3A6CA47E1D5369640060145E /* UIView+Extension.m in Sources */,
+				3A80DA781D54895D0090C4F2 /* UIViewController+Animator.m in Sources */,
 				3AB38A901D52E5B9003A7871 /* MGTrasitionPractice.xcdatamodeld in Sources */,
 				3A6CA4811D5369640060145E /* MASConstraintMaker.m in Sources */,
+				3A80DA741D54895D0090C4F2 /* HUTransitionAnimator.m in Sources */,
 				3A6CA4871D5369640060145E /* View+MASAdditions.m in Sources */,
 				3A20A7B01D53346E005FB972 /* MGMagicMoveVC.m in Sources */,
 				3A6CA4801D5369640060145E /* MASConstraint.m in Sources */,
@@ -432,13 +532,19 @@
 				3A20A7931D52A97B005FB972 /* MGCircleSpreadVC.m in Sources */,
 				3A20A7861D52A87F005FB972 /* MGPresentOneVC.m in Sources */,
 				3A20A78C1D52A8DC005FB972 /* MGPresentOneTransition.m in Sources */,
+				3A80DA771D54895D0090C4F2 /* HUTransitionVerticalLinesAnimator.m in Sources */,
 				3A20A7B31D53346E005FB972 /* MGMagicMovePushVC.m in Sources */,
+				3A80DA761D54895D0090C4F2 /* HUTransitionHorizontalLinesAnimator.m in Sources */,
 				3A20A79F1D532CC3005FB972 /* MGCircleSpreadTransition.m in Sources */,
+				3A80DA551D5417F10090C4F2 /* GradientView.m in Sources */,
 				3A6CA45A1D5369330060145E /* AppDelegate.m in Sources */,
 				3A6CA47D1D5369640060145E /* UIView+anchorPoint.m in Sources */,
 				3A6CA4881D5369640060145E /* ViewController+MASAdditions.m in Sources */,
 				3A20A7961D52B5B5005FB972 /* MGPageCoverPushVC.m in Sources */,
+				3A80DA801D5489B70090C4F2 /* CustomTransitionViewController.m in Sources */,
+				3A80DA791D54895D0090C4F2 /* ZBFallenBricksAnimator.m in Sources */,
 				3A6CA4821D5369640060145E /* MASLayoutConstraint.m in Sources */,
+				3A80DA821D5489B70090C4F2 /* MGAnimationVC.m in Sources */,
 				3AB38A841D52E5B8003A7871 /* main.m in Sources */,
 				3A6CA47F1D5369640060145E /* MASCompositeConstraint.m in Sources */,
 				3AB38ADD1D52F1E5003A7871 /* MGNaviTransition.m in Sources */,

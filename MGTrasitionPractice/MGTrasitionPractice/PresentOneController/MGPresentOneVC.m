@@ -29,6 +29,7 @@
         make.edges.equalTo(self.view);
     }];
     
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"点我或者向上滑动present" forState:UIControlStateNormal];
     [self.view addSubview:button];
