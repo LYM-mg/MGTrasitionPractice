@@ -11,4 +11,6 @@
 @interface GradientView : UIView
 /** 接口  外界赋值字符串 */
 @property (nonatomic,copy) NSString *textStr;
+
+- (void)addAnimationToGradientLayer;
 @end

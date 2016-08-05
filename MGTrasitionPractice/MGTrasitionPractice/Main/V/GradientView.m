@@ -22,6 +22,7 @@
     if (!_textLabel) {
         _textLabel = [[UILabel alloc] initWithFrame:self.gradientLayer.bounds];
         _textLabel.textColor = [UIColor grayColor];
+        _textLabel.backgroundColor = [UIColor clearColor];
         _textLabel.textAlignment = NSTextAlignmentCenter;
         _textLabel.font = [UIFont boldSystemFontOfSize:30];
         _textLabel.userInteractionEnabled = YES;
@@ -51,6 +52,7 @@
         NSArray *locations = @[@(0.25), @(0.5), @(0.75)];
         _gradientLayer.locations = locations;
     }
+    
     return _gradientLayer;
 }
 
@@ -58,8 +60,7 @@
  *  为gradientLayer添加动画效果
  */
 - (void)addAnimationToGradientLayer{
-    [super didMoveToWindow];
-    //     [self.gradientLayer removeAllAnimations];
+    [self.gradientLayer removeAllAnimations];
     CABasicAnimation *gradientAnimation = [CABasicAnimation animationWithKeyPath:@"locations"];
     gradientAnimation.fromValue = @[@(0.0), @(0.0), @(0.25)];
     gradientAnimation.toValue = @[@(0.75), @(1.0), @(1.0)];
@@ -67,6 +68,7 @@
     gradientAnimation.repeatCount = MAXFLOAT;
     [self.gradientLayer addAnimation:gradientAnimation forKey:nil];
 }
+
 //- (void)didMoveToWindow{
 //    [super didMoveToWindow];
 ////     [self.gradientLayer removeAllAnimations];
@@ -91,7 +93,8 @@
     [super layoutSubviews];
     self.gradientLayer.frame = self.bounds;
     self.textLabel.frame = self.gradientLayer.frame;
-    [self addAnimationToGradientLayer];
+    
+    [self didMoveToWindow];
 }
 
 /**
@@ -104,7 +107,12 @@
     
     self.textLabel.text = textStr;
     self.gradientLayer.mask =  self.textLabel.layer;
-//    [self addAnimationToGradientLayer];
+    [self addAnimationToGradientLayer];
 }
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [super touchesBegan:touches withEvent:event];
+//    NSLog(@"dsadasda");
+//}
 
 @end

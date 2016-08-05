@@ -21,8 +21,8 @@
 @end
 
 @implementation MGRootTableVC
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self.tableView reloadData];
 }
 
@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     self.title = @"自定义转场动画";
+    self.tableView.rowHeight = 50;
     self.navigationController.view.layer.cornerRadius = 10;
     self.navigationController.view.layer.masksToBounds = YES;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:nil action:nil];
@@ -57,18 +58,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    __block GradientView *gradientView = nil;
+    
+   
+    GradientView *gradientView = nil;
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         // 1.新建一个view,随便设置位置尺寸,将gradientLayer添加到view上面
         gradientView = [[GradientView alloc] initWithFrame:cell.frame];
-        gradientView.width = self.view.width;
         gradientView.backgroundColor = [UIColor clearColor];
-        
-        [cell addSubview:gradientView];
-
+        gradientView.textStr = _data[indexPath.row];
+        [cell.contentView addSubview:gradientView];
     }
-    gradientView.textStr = _data[indexPath.row];
+    
+     gradientView.textStr = _data[indexPath.row];
    //    cell.textLabel.text = _data[indexPath.row];
     return cell;
 }
