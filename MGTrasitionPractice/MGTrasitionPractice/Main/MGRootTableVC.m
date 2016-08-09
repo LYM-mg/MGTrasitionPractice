@@ -18,9 +18,19 @@
 @interface MGRootTableVC ()
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) NSArray *viewControllers;
+/** <#注释#> */
+@property (nonatomic,strong) NSMutableArray<GradientView *> *gradientViewArr;
 @end
 
 @implementation MGRootTableVC
+- (NSMutableArray<GradientView *> *)gradientViewArr
+{
+    if (!_gradientViewArr) {
+        _gradientViewArr = [NSMutableArray array];
+    }
+    return _gradientViewArr;
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
@@ -68,9 +78,10 @@
         gradientView.backgroundColor = [UIColor clearColor];
         gradientView.textStr = _data[indexPath.row];
         [cell.contentView addSubview:gradientView];
+        [self.gradientViewArr addObject:gradientView];
     }
-    
-     gradientView.textStr = _data[indexPath.row];
+    self.gradientViewArr[indexPath.row].textStr = _data[indexPath.row];
+//     gradientView.textStr = _data[indexPath.row];
    //    cell.textLabel.text = _data[indexPath.row];
     return cell;
 }
