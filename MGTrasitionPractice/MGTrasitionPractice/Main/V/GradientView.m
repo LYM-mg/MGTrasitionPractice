@@ -25,7 +25,7 @@
         _textLabel.backgroundColor = [UIColor clearColor];
         _textLabel.textAlignment = NSTextAlignmentCenter;
         _textLabel.font = [UIFont boldSystemFontOfSize:30];
-        _textLabel.userInteractionEnabled = YES;
+        _textLabel.userInteractionEnabled = NO;
         [self addSubview:_textLabel];
     }
     return _textLabel;
@@ -83,6 +83,14 @@
 // 初始化
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        [self.layer addSublayer:self.gradientLayer];
+        [self textLabel];
+    }
+    return self;
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
         [self.layer addSublayer:self.gradientLayer];
         [self textLabel];
     }

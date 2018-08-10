@@ -12,6 +12,7 @@
 #import "MGPageCoverVC.h"
 #import "MGCircleSpreadVC.h"
 #import "MGAnimationVC.h"
+#import "ViewController.h"
 
 #import "GradientView.h"
 
@@ -50,14 +51,14 @@
 
 - (NSArray *)data{
     if (!_data) {
-        _data = [@[@"神奇移动",@"弹性pop",@"翻页效果",@"小圆点扩散",@"CustomAnimation"] copy];
+        _data = [@[@"Move",@"神奇移动",@"弹性pop",@"翻页效果",@"小圆点扩散",@"CustomAnimation"] copy];
     }
     return _data;
 }
 
 - (NSArray *)viewControllers{
     if (!_viewControllers) {
-        _viewControllers = [@[@"MGMagicMoveVC", @"MGPresentOneVC", @"MGPageCoverVC", @"MGCircleSpreadVC",@"MGAnimationVC"] copy];
+        _viewControllers = [@[@"ViewController",@"MGMagicMoveVC", @"MGPresentOneVC", @"MGPageCoverVC", @"MGCircleSpreadVC",@"MGAnimationVC"] copy];
     }
     return _viewControllers;
 }
@@ -75,6 +76,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         // 1.新建一个view,随便设置位置尺寸,将gradientLayer添加到view上面
         gradientView = [[GradientView alloc] initWithFrame:cell.frame];
+        gradientView.width = self.view.width;
         gradientView.backgroundColor = [UIColor clearColor];
         gradientView.textStr = _data[indexPath.row];
         [cell.contentView addSubview:gradientView];

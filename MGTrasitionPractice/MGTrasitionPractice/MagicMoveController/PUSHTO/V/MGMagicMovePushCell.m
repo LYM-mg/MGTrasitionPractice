@@ -14,14 +14,15 @@
     if (self = [super initWithFrame:frame]) {
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.userInteractionEnabled = YES;
+        imageView.frame = self.frame;
         self.imageView = imageView;
         [self addSubview:imageView];
     }
     return self;
 }
 
-- (void)setImageView:(UIImageView *)imageView{
-    _imageView.image = imageView.image;
-}
+//- (void)setImageView:(UIImageView *)imageView{
+//    _imageView.image = imageView.image;
+//}
 
 @end

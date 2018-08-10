@@ -64,7 +64,7 @@ static NSString * const KMGMagicMoveCellReuseIdentifier = @"KMGMagicMoveCellReus
 
 #pragma mark <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;
+    return self.images.count*2;
 }
 
 - (MGMagicMoveCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -33,11 +33,11 @@ static NSString * const KMGMagicMovePushCellReuseIdentifier = @"KMGMagicMovePush
     [self setUpMainView];
     
     //初始化手势过渡的代理
-    self.interactiveTransition = [MGInteractiveTransition
-                                  interactiveTransitionWithTransitionType:MGInteractiveTransitionTypePop
-                                  GestureDirection:MGInteractiveTransitionGestureDirectionRight];
+//    self.interactiveTransition = [MGInteractiveTransition
+//                                  interactiveTransitionWithTransitionType:MGInteractiveTransitionTypePop
+//                                  GestureDirection:MGInteractiveTransitionGestureDirectionRight];
     //给当前控制器的视图添加手势
-    [_interactiveTransition addPanGestureForViewController:self];
+//    [_interactiveTransition addPanGestureForViewController:self];
 
 }
 
@@ -70,6 +70,13 @@ static NSString * const KMGMagicMovePushCellReuseIdentifier = @"KMGMagicMovePush
 //    });
 //    [self.view addSubview:collectionView];
 //    [collectionView registerClass:[MGMagicMovePushCell class] forCellWithReuseIdentifier:KMGMagicMovePushCellReuseIdentifier];
+//    [collectionView scrollToItemAtIndexPath:self.indexPath atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:YES];
+//
+//    if (@available(iOS 11,*)) {
+//        collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    }else {
+//        self.automaticallyAdjustsScrollViewInsets = NO;
+//    }
     
     // 2、描述
     UITextView *textView = [UITextView new];
@@ -83,7 +90,7 @@ static NSString * const KMGMagicMovePushCellReuseIdentifier = @"KMGMagicMovePush
         make.top.mas_equalTo(imageView.mas_bottom).offset(20);
     }];
     
-//    [collectionView scrollToItemAtIndexPath:self.indexPath atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,7 +112,7 @@ static NSString * const KMGMagicMovePushCellReuseIdentifier = @"KMGMagicMovePush
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.images.count;
+    return self.images.count*2;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{

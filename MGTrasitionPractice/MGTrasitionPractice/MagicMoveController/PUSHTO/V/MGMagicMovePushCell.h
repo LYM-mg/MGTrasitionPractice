@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MGMagicMovePushCell : UICollectionViewCell
-@property (weak, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UIImageView *imageView;
 @end
