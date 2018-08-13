@@ -9,13 +9,32 @@
 #import "MGCircleSpreadTransition.h"
 #import "MGCircleSpreadVC.h"
 
+@interface MGCircleSpreadTransition()<CAAnimationDelegate>
+/** 按钮的尺寸 */
+@property (nonatomic, assign) CGRect buttonFrame;
+
+@end
+
 @implementation MGCircleSpreadTransition
 #pragma mark - 初始化
-+ (instancetype)transitionWithTransitionType:(MGCircleSpreadTransitionType)type{
++ (instancetype)transitionWithTransitionType:(MGCircleSpreadTransitionType)type withOriginFrame:(CGRect)buttonFrame{
+    return [[self alloc] initWithTransitionType:type withOriginFrame:buttonFrame];
+}
+
+- (instancetype)initWithTransitionType:(MGCircleSpreadTransitionType)type withOriginFrame:(CGRect)buttonFrame{
+    self = [super init];
+    if (self) {
+        _type = type;
+        _buttonFrame = buttonFrame;
+    }
+    return self;
+}
+
++ (instancetype)transitionWithTransitionType:(MGCircleSpreadTransitionType)type {
     return [[self alloc] initWithTransitionType:type];
 }
 
-- (instancetype)initWithTransitionType:(MGCircleSpreadTransitionType)type{
+- (instancetype)initWithTransitionType:(MGCircleSpreadTransitionType)type {
     self = [super init];
     if (self) {
         _type = type;
@@ -28,15 +47,64 @@
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
-    switch (_type) {
-        case MGCircleSpreadTransitionTypePresent:
-            [self presentAnimation:transitionContext];
-            break;
-            
-        case MGCircleSpreadTransitionTypeDismiss:
-            [self dismissAnimation:transitionContext];
-            break;
+    if (CGRectIsEmpty(_buttonFrame)) {
+        switch (_type) {
+            case MGCircleSpreadTransitionTypePresent:
+                [self presentAnimation:transitionContext];
+                break;
+                
+            case MGCircleSpreadTransitionTypeDismiss:
+                [self dismissAnimation:transitionContext];
+                break;
+        }
+        return;
     }
+    
+    UIView *containerView = [transitionContext containerView];
+    containerView.backgroundColor = [UIColor clearColor];
+    
+    UIViewController *fromVc = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toVc = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    CGFloat radius;
+    UIBezierPath *startCycle;
+    UIBezierPath *endCycle;
+    if (_type == MGCircleSpreadTransitionTypePresent) {
+        startCycle =  [UIBezierPath bezierPathWithOvalInRect:_buttonFrame];
+        CGFloat x = MAX(_buttonFrame.origin.x, containerView.frame.size.width - _buttonFrame.origin.x);
+        CGFloat y = MAX(_buttonFrame.origin.y, containerView.frame.size.height - _buttonFrame.origin.y);
+        radius = sqrtf(pow(x, 2) + pow(y, 2));
+        endCycle = [UIBezierPath bezierPathWithArcCenter:containerView.center radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+        [containerView addSubview:toVc.view];
+    }else {
+        //画两个圆路径
+        radius = sqrtf(containerView.frame.size.height * containerView.frame.size.height + containerView.frame.size.width * containerView.frame.size.width) / 2;
+        startCycle = [UIBezierPath bezierPathWithArcCenter:containerView.center radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+        endCycle =  [UIBezierPath bezierPathWithOvalInRect:_buttonFrame];
+         [containerView addSubview:fromVc.view];
+    }
+    
+    
+    //创建路径动画
+    CABasicAnimation *maskLayerAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
+    maskLayerAnimation.delegate = self;
+    maskLayerAnimation.fromValue = (__bridge id)(startCycle.CGPath);
+    maskLayerAnimation.toValue = (__bridge id)((endCycle.CGPath));
+    maskLayerAnimation.duration = [self transitionDuration:transitionContext];
+    maskLayerAnimation.timingFunction = [CAMediaTimingFunction  functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    [maskLayerAnimation setValue:transitionContext forKey:@"transitionContext"];
+
+    //创建CAShapeLayer进行遮盖
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.fillColor = [UIColor greenColor].CGColor;
+    maskLayer.path = endCycle.CGPath;
+    if (_type == MGCircleSpreadTransitionTypePresent) {
+        toVc.view.layer.mask = maskLayer;
+    }else {
+        fromVc.view.layer.mask = maskLayer;
+    }
+    
+    [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
 }
 
 - (void)dismissAnimation:(id<UIViewControllerContextTransitioning>)transitionContext{
@@ -108,7 +176,15 @@
             id<UIViewControllerContextTransitioning> transitionContext = [anim valueForKey:@"transitionContext"];
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
             if ([transitionContext transitionWasCancelled]) {
-                [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask = nil;
+                if (CGRectIsEmpty(_buttonFrame)) {
+                    [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask = nil;
+                }else {
+                    [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask = nil;
+//                   [transitionContext containerView].layer.mask = nil;
+                }
+                
+//                [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view.layer.mask = nil;
+                
             }
         }
             break;

@@ -55,6 +55,7 @@
 
 - (void)present{
     MGCircleSpreadPresentedVC *presentVC = [MGCircleSpreadPresentedVC new];
+    presentVC.buttonFrame = self.buttonFrame;
     [self presentViewController:presentVC animated:YES completion:nil];
 }
 

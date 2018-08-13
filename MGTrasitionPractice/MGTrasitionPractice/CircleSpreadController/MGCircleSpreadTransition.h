@@ -17,8 +17,11 @@ typedef NS_ENUM(NSUInteger, MGCircleSpreadTransitionType) {
 
 @property (nonatomic, assign) MGCircleSpreadTransitionType type;
 
-+ (instancetype)transitionWithTransitionType:(MGCircleSpreadTransitionType)type;
-- (instancetype)initWithTransitionType:(MGCircleSpreadTransitionType)type;
++ (instancetype)transitionWithTransitionType:(MGCircleSpreadTransitionType)type withOriginFrame:(CGRect)buttonFrame;
+- (instancetype)initWithTransitionType:(MGCircleSpreadTransitionType)type withOriginFrame:(CGRect)buttonFrame;
 
++ (instancetype)transitionWithTransitionType:(MGCircleSpreadTransitionType)type;
+
+- (instancetype)transitionWithTransitionType:(MGCircleSpreadTransitionType)type;
 @end
 

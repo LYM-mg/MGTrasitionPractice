@@ -50,11 +50,11 @@
 
 #pragma mark - UIViewControllerTransitioningDelegate
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-    return [MGCircleSpreadTransition transitionWithTransitionType:MGCircleSpreadTransitionTypePresent];
+    return [MGCircleSpreadTransition transitionWithTransitionType:MGCircleSpreadTransitionTypePresent withOriginFrame:_buttonFrame];
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-    return [MGCircleSpreadTransition transitionWithTransitionType:MGCircleSpreadTransitionTypeDismiss];
+    return [MGCircleSpreadTransition transitionWithTransitionType:MGCircleSpreadTransitionTypeDismiss withOriginFrame:_buttonFrame];
 }
 
 

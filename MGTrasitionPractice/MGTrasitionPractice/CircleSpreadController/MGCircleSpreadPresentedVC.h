@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MGCircleSpreadPresentedVC : UIViewController
-
+/** 按钮的尺寸 */
+@property (nonatomic, assign) CGRect buttonFrame;
 @end
