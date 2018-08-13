@@ -66,8 +66,6 @@
     UIViewController *fromVc = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVc = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    
-    
     CGFloat radius;
     UIBezierPath *startCycle;
     UIBezierPath *endCycle;
