@@ -9,6 +9,7 @@
 #import "CustomTransitionViewController.h"
 #import "HUTransitionAnimator.h"
 #import "ZBFallenBricksAnimator.h"
+#import "MGGhostViewController.h"
 
 
 typedef enum {
@@ -75,7 +76,8 @@ typedef enum {
             break;
         case TransitionTypeGravity:
             animator = [[ZBFallenBricksAnimator alloc] init];
-            break;
+            
+            break;;
         default:
             animator = nil;
     }
@@ -101,9 +103,17 @@ typedef enum {
         case 2:
             type = TransitionTypeGravity;
             break;
+        default:
+            break;
     }
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)present:(UIButton *)sender {
+    MGGhostViewController *presentedVC = [MGGhostViewController new];
+//    self.transitioningDelegate = presentedVC;
+    [self presentViewController:presentedVC animated:YES completion:nil];
+   
 }
 
 @end

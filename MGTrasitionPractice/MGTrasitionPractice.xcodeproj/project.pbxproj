@@ -52,6 +52,7 @@
 		3AB38A921D52E5B9003A7871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB38A911D52E5B9003A7871 /* Assets.xcassets */; };
 		3AB38A951D52E5B9003A7871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB38A931D52E5B9003A7871 /* LaunchScreen.storyboard */; };
 		3AB38ADD1D52F1E5003A7871 /* MGNaviTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB38ADC1D52F1E5003A7871 /* MGNaviTransition.m */; };
+		F42B51762127F8E9002E94A6 /* MGGhostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42B51752127F8E9002E94A6 /* MGGhostViewController.m */; };
 		F4367383211D3FE200160ACF /* 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4367331211D3FE100160ACF /* 1.plist */; };
 		F4367384211D3FE200160ACF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4367334211D3FE100160ACF /* DetailViewController.m */; };
 		F4367385211D3FE200160ACF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4367336211D3FE100160ACF /* ViewController.m */; };
@@ -174,6 +175,8 @@
 		3AB38AB21D52F0BA003A7871 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3AB38ADB1D52F1E5003A7871 /* MGNaviTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNaviTransition.h; sourceTree = "<group>"; };
 		3AB38ADC1D52F1E5003A7871 /* MGNaviTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNaviTransition.m; sourceTree = "<group>"; };
+		F42B51742127F8E9002E94A6 /* MGGhostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGGhostViewController.h; sourceTree = "<group>"; };
+		F42B51752127F8E9002E94A6 /* MGGhostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGGhostViewController.m; sourceTree = "<group>"; };
 		F4367331211D3FE100160ACF /* 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
 		F4367333211D3FE100160ACF /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F4367334211D3FE100160ACF /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
@@ -434,6 +437,8 @@
 				3A80DA7D1D5489B70090C4F2 /* CustomTransitionViewController.xib */,
 				3A80DA7E1D5489B70090C4F2 /* MGAnimationVC.h */,
 				3A80DA7F1D5489B70090C4F2 /* MGAnimationVC.m */,
+				F42B51742127F8E9002E94A6 /* MGGhostViewController.h */,
+				F42B51752127F8E9002E94A6 /* MGGhostViewController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -732,6 +737,7 @@
 				3A6CA4861D5369640060145E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				3A80DA751D54895D0090C4F2 /* HUTransitionGhostAnimator.m in Sources */,
 				3A6CA45C1D5369330060145E /* MGRootTableVC.m in Sources */,
+				F42B51762127F8E9002E94A6 /* MGGhostViewController.m in Sources */,
 				3A6CA47E1D5369640060145E /* UIView+Extension.m in Sources */,
 				F4367398211D3FE200160ACF /* SDWebImageCompat.m in Sources */,
 				F436739A211D3FE200160ACF /* SDWebImageDownloader.m in Sources */,

@@ -11,10 +11,11 @@
 @implementation HUTransitionGhostAnimator
 
 #define GHOSTANIMATION_TIME1 0.1
-#define GHOSTANIMATION_TIME2 0.20
+#define GHOSTANIMATION_TIME2 0.30
 /// returns the duration of the oldPushAnimation
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
-    return GHOSTANIMATION_TIME1+GHOSTANIMATION_TIME2;
+    return 0.5;
+//    return GHOSTANIMATION_TIME1+GHOSTANIMATION_TIME2;
 }
 
 /**
