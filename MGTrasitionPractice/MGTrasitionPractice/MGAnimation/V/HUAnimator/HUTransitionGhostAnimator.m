@@ -104,7 +104,7 @@
         //outgoing view
         endFrame.origin.x += CGRectGetWidth(endFrame);
         
-        
+       
         [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             toView.frame = toFrame;
             toView.alpha = 1;
@@ -112,7 +112,7 @@
             fromVC.view.alpha = 0;
         } completion:^(BOOL finished) {
             fromVC.view.alpha = 1;
-            [transitionContext completeTransition:YES];
+            [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
         }];
     }
     

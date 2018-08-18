@@ -48,7 +48,7 @@
 - (void)handleGesture:(UIPanGestureRecognizer *)panGesture{
     //手势百分比
     CGFloat persent = 0;
-    
+
     switch (self.direction) {
         case MGInteractiveTransitionGestureDirectionLeft:{ // 左
             CGFloat transitionX = -[panGesture translationInView:panGesture.view].x;
@@ -57,7 +57,8 @@
         }
         case MGInteractiveTransitionGestureDirectionRight:{ // 右
             CGFloat transitionX = [panGesture translationInView:panGesture.view].x;
-            persent = transitionX / panGesture.view.frame.size.width;
+            persent = (transitionX / panGesture.view.frame.size.width);
+           
             break;
         }
         case MGInteractiveTransitionGestureDirectionUp:{ // 上
@@ -74,6 +75,8 @@
             break;
     }
     
+    
+    persent = MIN(1.0,(MAX(0.0, persent)));
     switch (panGesture.state) {
         case UIGestureRecognizerStateBegan:{
             //手势开始的时候标记手势状态，并开始相应的事件
@@ -84,8 +87,10 @@
         case UIGestureRecognizerStateChanged:{
             //手势过程中，通过updateInteractiveTransition设置pop过程进行的百分比
             [self updateInteractiveTransition:persent];
+            NSLog(@"persent = %f",persent);
             break;
         }
+           
         case UIGestureRecognizerStateEnded: case UIGestureRecognizerStateCancelled:{
             //手势完成后结束标记并且判断移动距离是否过半，过则finishInteractiveTransition完成转场操作，否者取消转场操作
             self.interation = NO;

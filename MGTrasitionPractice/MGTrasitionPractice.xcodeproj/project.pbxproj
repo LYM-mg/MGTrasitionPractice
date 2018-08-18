@@ -53,6 +53,9 @@
 		3AB38A951D52E5B9003A7871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB38A931D52E5B9003A7871 /* LaunchScreen.storyboard */; };
 		3AB38ADD1D52F1E5003A7871 /* MGNaviTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB38ADC1D52F1E5003A7871 /* MGNaviTransition.m */; };
 		F42B51762127F8E9002E94A6 /* MGGhostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42B51752127F8E9002E94A6 /* MGGhostViewController.m */; };
+		F42B517921280CA3002E94A6 /* MGPresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42B517821280CA3002E94A6 /* MGPresentViewController.m */; };
+		F42B517C21280D3A002E94A6 /* MGLeftPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F42B517B21280D3A002E94A6 /* MGLeftPresentAnimation.m */; };
+		F42B517F21280EF8002E94A6 /* MGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42B517E21280EF8002E94A6 /* MGViewController.m */; };
 		F4367383211D3FE200160ACF /* 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4367331211D3FE100160ACF /* 1.plist */; };
 		F4367384211D3FE200160ACF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4367334211D3FE100160ACF /* DetailViewController.m */; };
 		F4367385211D3FE200160ACF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4367336211D3FE100160ACF /* ViewController.m */; };
@@ -177,6 +180,12 @@
 		3AB38ADC1D52F1E5003A7871 /* MGNaviTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNaviTransition.m; sourceTree = "<group>"; };
 		F42B51742127F8E9002E94A6 /* MGGhostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGGhostViewController.h; sourceTree = "<group>"; };
 		F42B51752127F8E9002E94A6 /* MGGhostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGGhostViewController.m; sourceTree = "<group>"; };
+		F42B517721280CA3002E94A6 /* MGPresentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGPresentViewController.h; sourceTree = "<group>"; };
+		F42B517821280CA3002E94A6 /* MGPresentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGPresentViewController.m; sourceTree = "<group>"; };
+		F42B517A21280D3A002E94A6 /* MGLeftPresentAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGLeftPresentAnimation.h; sourceTree = "<group>"; };
+		F42B517B21280D3A002E94A6 /* MGLeftPresentAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGLeftPresentAnimation.m; sourceTree = "<group>"; };
+		F42B517D21280EF8002E94A6 /* MGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGViewController.h; sourceTree = "<group>"; };
+		F42B517E21280EF8002E94A6 /* MGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGViewController.m; sourceTree = "<group>"; };
 		F4367331211D3FE100160ACF /* 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
 		F4367333211D3FE100160ACF /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F4367334211D3FE100160ACF /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
@@ -399,6 +408,8 @@
 			children = (
 				3A80DA641D54895D0090C4F2 /* HUAnimator */,
 				3A80DA6D1D54895D0090C4F2 /* ZBCustomTransitions */,
+				F42B517A21280D3A002E94A6 /* MGLeftPresentAnimation.h */,
+				F42B517B21280D3A002E94A6 /* MGLeftPresentAnimation.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -439,6 +450,10 @@
 				3A80DA7F1D5489B70090C4F2 /* MGAnimationVC.m */,
 				F42B51742127F8E9002E94A6 /* MGGhostViewController.h */,
 				F42B51752127F8E9002E94A6 /* MGGhostViewController.m */,
+				F42B517721280CA3002E94A6 /* MGPresentViewController.h */,
+				F42B517821280CA3002E94A6 /* MGPresentViewController.m */,
+				F42B517D21280EF8002E94A6 /* MGViewController.h */,
+				F42B517E21280EF8002E94A6 /* MGViewController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -737,6 +752,7 @@
 				3A6CA4861D5369640060145E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				3A80DA751D54895D0090C4F2 /* HUTransitionGhostAnimator.m in Sources */,
 				3A6CA45C1D5369330060145E /* MGRootTableVC.m in Sources */,
+				F42B517921280CA3002E94A6 /* MGPresentViewController.m in Sources */,
 				F42B51762127F8E9002E94A6 /* MGGhostViewController.m in Sources */,
 				3A6CA47E1D5369640060145E /* UIView+Extension.m in Sources */,
 				F4367398211D3FE200160ACF /* SDWebImageCompat.m in Sources */,
@@ -761,6 +777,7 @@
 				3A20A78C1D52A8DC005FB972 /* MGPresentOneTransition.m in Sources */,
 				F4367384211D3FE200160ACF /* DetailViewController.m in Sources */,
 				3A80DA771D54895D0090C4F2 /* HUTransitionVerticalLinesAnimator.m in Sources */,
+				F42B517C21280D3A002E94A6 /* MGLeftPresentAnimation.m in Sources */,
 				F43673A5211D3FE200160ACF /* Model.m in Sources */,
 				F43673A3211D3FE200160ACF /* UIImageView+WebCache.m in Sources */,
 				F4367394211D3FE200160ACF /* OUNavigationController.m in Sources */,
@@ -775,6 +792,7 @@
 				F43673A6211D3FE200160ACF /* OJLCollectionViewCell.m in Sources */,
 				3A6CA4881D5369640060145E /* ViewController+MASAdditions.m in Sources */,
 				3A20A7961D52B5B5005FB972 /* MGPageCoverPushVC.m in Sources */,
+				F42B517F21280EF8002E94A6 /* MGViewController.m in Sources */,
 				3A80DA801D5489B70090C4F2 /* CustomTransitionViewController.m in Sources */,
 				3A80DA791D54895D0090C4F2 /* ZBFallenBricksAnimator.m in Sources */,
 				3A6CA4821D5369640060145E /* MASLayoutConstraint.m in Sources */,

@@ -8,9 +8,11 @@
 
 #import "MGGhostViewController.h"
 #import "HUTransitionAnimator.h"
+#import "MGInteractiveTransition.h"
+
 
 @interface MGGhostViewController ()<UIViewControllerTransitioningDelegate>
-
+@property (nonatomic, strong) MGInteractiveTransition *interactiveTransition;
 @end
 
 @implementation MGGhostViewController
@@ -19,29 +21,17 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor redColor];
-//    self.navigationItem.title = @"笨蛋呐，好想你";
     self.transitioningDelegate = self;
+    self.interactiveTransition = [MGInteractiveTransition interactiveTransitionWithTransitionType:MGInteractiveTransitionTypeDismiss GestureDirection:MGInteractiveTransitionGestureDirectionRight];
+    [self.interactiveTransition addPanGestureForViewController:self];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UINavigationControllerDelegate
-
-//- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
-//                                  animationControllerForOperation:(UINavigationControllerOperation)operation
-//                                               fromViewController:(UIViewController *)fromVC
-//                                                 toViewController:(UIViewController *)toVC
-//{
-//    NSObject <UIViewControllerAnimatedTransitioning> *animator;
-//
-//    animator = [[HUTransitionGhostAnimator alloc] init];
-//    [(HUTransitionGhostAnimator *)animator setPresenting:YES];
-//
-//    return animator;
-//}
 
 #pragma mark - UIViewControllerTransitioningDelegate
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
@@ -62,10 +52,20 @@
     return animator;
 }
 
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator{
+    return _interactiveTransition;
+    //.interation ? _interactiveTransition : nil;
+}
+
 #pragma mark - IBAction
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    UITouch *touch = [touches anyObject];
+    CGPoint p = [touch locationInView:self.view];
+    if (p.y > self.view.height/2) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
+
+
 @end

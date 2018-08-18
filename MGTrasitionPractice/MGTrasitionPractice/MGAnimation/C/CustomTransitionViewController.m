@@ -10,6 +10,7 @@
 #import "HUTransitionAnimator.h"
 #import "ZBFallenBricksAnimator.h"
 #import "MGGhostViewController.h"
+#import "MGViewController.h"
 
 
 typedef enum {
@@ -42,10 +43,18 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // 设置导航栏右边按钮
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Custom" style:UIBarButtonItemStyleDone target:self action:@selector(customAnimation)];
 
     type = TransitionTypeNormal;
     
     self.navigationController.delegate = self;
+}
+
+- (void)customAnimation{
+    MGViewController *vc = [[MGViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
