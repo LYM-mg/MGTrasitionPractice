@@ -23,7 +23,8 @@
         fromView = fromViewController.view;
         toView = toViewController.view;
         
-    } if (self.isPresent) {
+    }
+    if (self.isPresent) {
         transView = toView;
         [[transitionContext containerView] addSubview:toView];
         
@@ -33,7 +34,8 @@
         
     }
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    CGFloat height = [UIScreen mainScreen].bounds.size.height; transView.frame = CGRectMake(self.isPresent ?width :0, 0, width, height);
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    transView.frame = CGRectMake(self.isPresent ?width :0, 0, width, height);
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         transView.frame = CGRectMake(self.isPresent ?0 :width, 0, width, height);
         

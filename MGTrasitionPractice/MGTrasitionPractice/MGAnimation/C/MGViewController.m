@@ -28,7 +28,6 @@
 
  - (void)customAnimation{
      MGPresentViewController * secondVC = [[MGPresentViewController alloc] init];
-     secondVC.transitioningDelegate = self;
      [self presentViewController:secondVC animated:YES completion:nil];
  }
 

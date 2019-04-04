@@ -12,7 +12,8 @@
 
 
 @interface MGGhostViewController ()<UIViewControllerTransitioningDelegate>
-@property (nonatomic, strong) MGInteractiveTransition *interactiveTransition;
+//@property (nonatomic, strong) MGInteractiveTransition *interactiveTransition;
+@property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactiveTransition;
 @end
 
 @implementation MGGhostViewController
@@ -22,10 +23,39 @@
     
     self.view.backgroundColor = [UIColor redColor];
     self.transitioningDelegate = self;
-    self.interactiveTransition = [MGInteractiveTransition interactiveTransitionWithTransitionType:MGInteractiveTransitionTypeDismiss GestureDirection:MGInteractiveTransitionGestureDirectionRight];
-    [self.interactiveTransition addPanGestureForViewController:self];
+//    self.interactiveTransition = [MGInteractiveTransition interactiveTransitionWithTransitionType:MGInteractiveTransitionTypeDismiss GestureDirection:MGInteractiveTransitionGestureDirectionRight];
+//    [self.interactiveTransition addPanGestureForViewController:self];
+    
+    //添加手势
+    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] init];
+    [pan addTarget:self action:@selector(panGestureRecognizerAction:)]; [self.view addGestureRecognizer:pan];
 }
 
+- (void)panGestureRecognizerAction:(UIPanGestureRecognizer *)pan{
+    
+    //产生百分比
+    CGFloat process = [pan translationInView:self.view].x / ([UIScreen mainScreen].bounds.size.width);
+    
+    NSLog(@"panGesture.width = %f   transitionX = %f",pan.view.frame.size.width,[pan translationInView:pan.view].x);
+    process = MIN(1.0,(MAX(0.0, process)));
+    
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        self.interactiveTransition = [UIPercentDrivenInteractiveTransition new];
+        //触发dismiss转场动画
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    }else if (pan.state == UIGestureRecognizerStateChanged){
+        [self.interactiveTransition updateInteractiveTransition:process];
+    }else if (pan.state == UIGestureRecognizerStateEnded
+              || pan.state == UIGestureRecognizerStateCancelled){
+        if (process > 0.5) {
+            [ self.interactiveTransition finishInteractiveTransition];
+        }else{
+            [ self.interactiveTransition cancelInteractiveTransition];
+        }
+        self.interactiveTransition = nil;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
